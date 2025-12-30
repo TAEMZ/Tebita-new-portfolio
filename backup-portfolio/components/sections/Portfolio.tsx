@@ -2,61 +2,47 @@
 
 import { useRef, useState } from 'react';
 
-export interface Project {
-  title: string;
-  client: string;
-  tech: string;
-  outcome: string;
-  image: string;
-}
-
-export default function Portfolio({ initialProjects }: { initialProjects?: any[] }) {
+export default function Portfolio() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const projects = initialProjects?.map(p => ({
-    title: p.title,
-    client: p.client || '',
-    tech: p.tech || '',
-    outcome: p.outcome || '',
-    image: p.image?.url || p.image || '/assets/image.png'
-  })) || [
-      {
-        title: 'NEXUS AI',
-        client: 'Fortune 500 Retail',
-        tech: 'TensorFlow • Python • Cloud ML',
-        outcome: '43% increase in prediction accuracy',
-        image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
-      },
-      {
-        title: 'QUANTUM FLOW',
-        client: 'FinTech Startup',
-        tech: 'React • Node.js • PostgreSQL',
-        outcome: 'Processed $2M+ in first month',
-        image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
-      },
-      {
-        title: 'SYNAPSE',
-        client: 'Healthcare Corp',
-        tech: 'NLP • HIPAA • Real-time Analytics',
-        outcome: '67% reduction in processing time',
-        image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
-      },
-      {
-        title: 'AUTOMATION SUITE',
-        client: 'Manufacturing Giant',
-        tech: 'RPA • IoT • Edge Computing',
-        outcome: '$1.2M annual cost savings',
-        image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
-      },
-      {
-        title: 'ECLIPSE PLATFORM',
-        client: 'E-commerce Leader',
-        tech: 'Microservices • Kubernetes • Redis',
-        outcome: '99.99% uptime achieved',
-        image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
-      },
-    ];
+  const projects = [
+    {
+      title: 'NEXUS AI',
+      client: 'Fortune 500 Retail',
+      tech: 'TensorFlow • Python • Cloud ML',
+      outcome: '43% increase in prediction accuracy',
+      image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
+    },
+    {
+      title: 'QUANTUM FLOW',
+      client: 'FinTech Startup',
+      tech: 'React • Node.js • PostgreSQL',
+      outcome: 'Processed $2M+ in first month',
+      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
+    },
+    {
+      title: 'SYNAPSE',
+      client: 'Healthcare Corp',
+      tech: 'NLP • HIPAA • Real-time Analytics',
+      outcome: '67% reduction in processing time',
+      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
+    },
+    {
+      title: 'AUTOMATION SUITE',
+      client: 'Manufacturing Giant',
+      tech: 'RPA • IoT • Edge Computing',
+      outcome: '$1.2M annual cost savings',
+      image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
+    },
+    {
+      title: 'ECLIPSE PLATFORM',
+      client: 'E-commerce Leader',
+      tech: 'Microservices • Kubernetes • Redis',
+      outcome: '99.99% uptime achieved',
+      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200',
+    },
+  ];
 
   return (
     <section id="portfolio" className="relative py-32 bg-[#050505] overflow-hidden">

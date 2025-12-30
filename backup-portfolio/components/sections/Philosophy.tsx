@@ -2,16 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
-export default function Philosophy({ initialPhilosophy }: { initialPhilosophy?: any[] }) {
+export default function Philosophy() {
   const [codeLines, setCodeLines] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const philosophyHighlights = initialPhilosophy?.[0]?.content?.map((c: any) => c.point) || [
-    'Pure implementation over promised perfection',
-    'Hardware-software convergence as the ultimate goal',
-    'AI as an extension of human intent, not a replacement',
-    'Extreme minimalism in code, maximum impact in output',
-  ];
 
   const codeSequence = [
     '// Initialize innovation',
@@ -128,16 +121,35 @@ export default function Philosophy({ initialPhilosophy }: { initialPhilosophy?: 
               </p>
 
               <div className="pt-8 space-y-4">
-                {philosophyHighlights.map((point: string, idx: number) => (
-                  <div key={idx} className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-[#C0C0C0] rounded-full mt-2"></div>
-                    <div>
-                      <p className="text-base text-[#C0C0C0]/70">
-                        {point}
-                      </p>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-[#C0C0C0] rounded-full mt-2"></div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#E0E0E0] mb-2">Clarity & Purpose</h3>
+                    <p className="text-base text-[#C0C0C0]/70">
+                      We cut through the noise to deliver exactly what you need. No jargon, just results.
+                    </p>
                   </div>
-                ))}
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-[#C0C0C0] rounded-full mt-2"></div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#E0E0E0] mb-2">Built for Humans</h3>
+                    <p className="text-base text-[#C0C0C0]/70">
+                      Powerful technology should feel simple and intuitive to the people using it.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-[#C0C0C0] rounded-full mt-2"></div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#E0E0E0] mb-2">Long-Term Vision</h3>
+                    <p className="text-base text-[#C0C0C0]/70">
+                      We write code today that you can rely on tomorrow. Scalable, maintainable, and robust.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
