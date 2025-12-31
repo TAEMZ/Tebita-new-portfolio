@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 
-export default function TechStack() {
-    const [activeCategory, setActiveCategory] = useState<string | null>('Automation');
+export default function TechStack({ initialTechnology }: { initialTechnology?: any[] }) {
+    const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-    const categories = [
+    const fallbackCategories = [
         {
             id: 'Automation',
             title: 'AUTOMATION',
@@ -55,6 +55,24 @@ export default function TechStack() {
             ]
         }
     ];
+
+    const categories = initialTechnology && initialTechnology.length > 0
+        ? initialTechnology.map((cat: any) => ({
+            id: cat.title,
+            title: cat.title,
+            description: cat.description,
+            items: cat.items?.map((item: any) => ({
+                name: item.name,
+                icon: item.icon,
+                desc: item.description
+            })) || []
+        }))
+        : fallbackCategories;
+
+    // Set first category as active if not set
+    if (activeCategory === null && categories.length > 0) {
+        setActiveCategory(categories[0].id);
+    }
 
     return (
         <section id="techstack" className="relative py-32 bg-[#050505] overflow-hidden">
