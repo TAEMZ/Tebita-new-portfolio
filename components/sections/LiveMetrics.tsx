@@ -39,15 +39,36 @@ const MetricCard = ({ label, value, suffix = '', delay = 0 }: { label: string; v
     );
 };
 
-export default function LiveMetrics() {
+export default function LiveMetrics({ initialMetrics }: { initialMetrics?: any[] }) {
+    const fallbackMetrics = [
+        { label: "System Uptime", value: 99, suffix: "%", delay: 0 },
+        { label: "Global Projects", value: 142, suffix: "", delay: 200 },
+        { label: "Lines of Code", value: 850, suffix: "K+", delay: 400 },
+        { label: "Client ROI", value: 300, suffix: "%", delay: 600 }
+    ];
+
+    const metrics = initialMetrics && initialMetrics.length > 0
+        ? initialMetrics.map((m: any, index: number) => ({
+            label: m.label,
+            value: m.value,
+            suffix: m.suffix || "",
+            delay: index * 200
+        }))
+        : fallbackMetrics;
+
     return (
         <section className="py-20 bg-[#050505] border-b border-[#333]/50">
             <div className="max-w-7xl mx-auto px-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <MetricCard label="System Uptime" value={99} suffix="%" delay={0} />
-                    <MetricCard label="Global Projects" value={142} delay={200} />
-                    <MetricCard label="Lines of Code" value={850} suffix="K+" delay={400} />
-                    <MetricCard label="Client ROI" value={300} suffix="%" delay={600} />
+                    {metrics.map((metric, index) => (
+                        <MetricCard
+                            key={index}
+                            label={metric.label}
+                            value={metric.value}
+                            suffix={metric.suffix}
+                            delay={metric.delay}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

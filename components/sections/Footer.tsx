@@ -2,9 +2,18 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Footer() {
+export default function Footer({ initialContact }: { initialContact?: any }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+
+  const contact = initialContact || {
+    email: 'hello@tebitatech.com',
+    phone: '+1 (234) 567-890',
+    location: 'Addis Ababa, Ethiopia\nRemote-First Worldwide',
+    githubUrl: 'https://github.com',
+    linkedinUrl: 'https://linkedin.com',
+    twitterUrl: 'https://twitter.com'
+  };
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -72,18 +81,16 @@ export default function Footer() {
                 href="mailto:hello@tebitatech.com"
                 className="block text-[#C0C0C0] hover:text-[#E0E0E0] transition-colors duration-300"
               >
-                hello@tebitatech.com
+                {contact.email}
               </a>
               <a
-                href="tel:+1234567890"
+                href={`tel:${contact.phone?.replace(/\s/g, '')}`}
                 className="block text-[#C0C0C0] hover:text-[#E0E0E0] transition-colors duration-300"
               >
-                +1 (234) 567-890
+                {contact.phone}
               </a>
-              <p className="text-[#C0C0C0]/70">
-                Addis Ababa, Ethiopia
-                <br />
-                Remote-First Worldwide
+              <p className="text-[#C0C0C0]/70 whitespace-pre-line">
+                {contact.location}
               </p>
             </div>
           </div>
@@ -130,7 +137,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold text-[#E0E0E0] mb-6">CONNECT</h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href={contact.githubUrl || 'https://github.com'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-[#C0C0C0]/30 flex items-center justify-center hover:border-[#C0C0C0] hover:shadow-[0_0_20px_rgba(192,192,192,0.3)] transition-all duration-300"
@@ -145,7 +152,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href={contact.linkedinUrl || 'https://linkedin.com'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-[#C0C0C0]/30 flex items-center justify-center hover:border-[#C0C0C0] hover:shadow-[0_0_20px_rgba(192,192,192,0.3)] transition-all duration-300"
@@ -160,7 +167,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://twitter.com"
+                href={contact.twitterUrl || 'https://twitter.com'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-[#C0C0C0]/30 flex items-center justify-center hover:border-[#C0C0C0] hover:shadow-[0_0_20px_rgba(192,192,192,0.3)] transition-all duration-300"

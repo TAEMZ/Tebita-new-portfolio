@@ -19,19 +19,28 @@ export default async function Home() {
   let services: any[] = [];
   let projects: any[] = [];
   let philosophy: any[] = [];
+  let testimonials: any[] = [];
+  let metrics: any[] = [];
+  let contact: any = null;
 
   try {
     const payload = await getPayload({ config });
 
-    const [servicesData, projectsData, philosophyData] = await Promise.all([
+    const [servicesData, projectsData, philosophyData, testimonialsData, metricsData, contactData] = await Promise.all([
       payload.find({ collection: 'services', sort: 'number' }),
       payload.find({ collection: 'projects' }),
-      payload.find({ collection: 'philosophy' })
+      payload.find({ collection: 'philosophy' }),
+      payload.find({ collection: 'testimonials' }),
+      payload.find({ collection: 'metrics', sort: 'order' }),
+      payload.find({ collection: 'contact', limit: 1 })
     ]);
 
     services = servicesData.docs;
     projects = projectsData.docs;
     philosophy = philosophyData.docs;
+    testimonials = testimonialsData.docs;
+    metrics = metricsData.docs;
+    contact = contactData.docs[0] || null;
   } catch (error) {
     console.error('Failed to fetch data from PayloadCMS. Using fallback local data.', error);
   }
@@ -47,10 +56,10 @@ export default async function Home() {
         <Impact initialServices={services} />
         <TechStack />
         <Portfolio initialProjects={projects} />
-        <LiveMetrics />
-        <Testimonials />
+        <LiveMetrics initialMetrics={metrics} />
+        <Testimonials initialTestimonials={testimonials} />
         <Philosophy initialPhilosophy={philosophy} />
-        <Footer />
+        <Footer initialContact={contact} />
       </main>
     </>
   );

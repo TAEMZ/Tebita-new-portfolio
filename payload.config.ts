@@ -142,6 +142,98 @@ export default buildConfig({
                 },
             ],
         },
+        {
+            slug: 'testimonials',
+            admin: {
+                useAsTitle: 'author',
+            },
+            fields: [
+                {
+                    name: 'quote',
+                    type: 'textarea',
+                    required: true,
+                },
+                {
+                    name: 'author',
+                    type: 'text',
+                    required: true,
+                },
+                {
+                    name: 'role',
+                    type: 'text',
+                    required: true,
+                },
+                {
+                    name: 'company',
+                    type: 'text',
+                    required: true,
+                },
+            ],
+        },
+        {
+            slug: 'metrics',
+            admin: {
+                useAsTitle: 'label',
+            },
+            fields: [
+                {
+                    name: 'label',
+                    type: 'text',
+                    required: true,
+                },
+                {
+                    name: 'value',
+                    type: 'number',
+                    required: true,
+                },
+                {
+                    name: 'suffix',
+                    type: 'text',
+                },
+                {
+                    name: 'order',
+                    type: 'number',
+                    required: true,
+                    defaultValue: 0,
+                },
+            ],
+        },
+        {
+            slug: 'contact',
+            admin: {
+                useAsTitle: 'email',
+            },
+            fields: [
+                {
+                    name: 'email',
+                    type: 'email',
+                    required: true,
+                },
+                {
+                    name: 'phone',
+                    type: 'text',
+                },
+                {
+                    name: 'location',
+                    type: 'textarea',
+                },
+                {
+                    name: 'githubUrl',
+                    type: 'text',
+                    label: 'GitHub URL',
+                },
+                {
+                    name: 'linkedinUrl',
+                    type: 'text',
+                    label: 'LinkedIn URL',
+                },
+                {
+                    name: 'twitterUrl',
+                    type: 'text',
+                    label: 'Twitter URL',
+                },
+            ],
+        },
     ],
     editor: lexicalEditor({}),
     secret: process.env.PAYLOAD_SECRET || 'fallback-secret',

@@ -41,11 +41,11 @@ const DecryptingText = ({ text, reveal }: { text: string; reveal: boolean }) => 
     return <span>{displayText}</span>;
 };
 
-export default function Testimonials() {
+export default function Testimonials({ initialTestimonials }: { initialTestimonials?: any[] }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-    const testimonials = [
+    const fallbackTestimonials = [
         {
             quote: "Tebita Tech didn't just build our platform; they engineered a digital nervous system. The efficiency gains are not just measurable; they are exponential.",
             author: "Sarah Chen",
@@ -65,6 +65,15 @@ export default function Testimonials() {
             company: "HealthStream"
         }
     ];
+
+    const testimonials = initialTestimonials && initialTestimonials.length > 0
+        ? initialTestimonials.map((t: any) => ({
+            quote: t.quote,
+            author: t.author,
+            role: t.role,
+            company: t.company
+        }))
+        : fallbackTestimonials;
 
     useEffect(() => {
         if (!isAutoPlaying) return;
