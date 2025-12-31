@@ -13,6 +13,8 @@ import TechStack from '@/components/sections/TechStack';
 import { getPayload } from 'payload';
 import config from '@/payload.config';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   let services: any[] = [];
   let projects: any[] = [];

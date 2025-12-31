@@ -42,16 +42,7 @@ export default buildConfig({
             access: {
                 read: () => true, // Public read access for images
             },
-            hooks: {
-                afterRead: [
-                    ({ doc }) => {
-                        if (doc.filename) {
-                            doc.url = `/media/${doc.filename}`;
-                        }
-                        return doc;
-                    },
-                ],
-            },
+
             fields: [
                 {
                     name: 'alt',
