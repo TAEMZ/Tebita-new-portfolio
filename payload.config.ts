@@ -10,11 +10,6 @@ import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-const blobToken = process.env.BLOB_READ_WRITE_TOKEN;
-console.log('--- PAYLOAD CONFIG DEBUG ---');
-console.log('BLOB_READ_WRITE_TOKEN present:', !!blobToken);
-console.log('Server URL:', process.env.NEXT_PUBLIC_SERVER_URL);
-
 export default buildConfig({
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
     admin: {
@@ -22,11 +17,11 @@ export default buildConfig({
     },
     plugins: [
         vercelBlobStorage({
-            enabled: !!blobToken,
+            enabled: !!process.env.BLOB_READ_WRITE_TOKEN,
             collections: {
                 media: true,
             },
-            token: blobToken,
+            token: process.env.BLOB_READ_WRITE_TOKEN,
         }),
     ],
     collections: [
