@@ -83,42 +83,13 @@ export default function Header() {
                         HOME
                     </Link>
 
-                    {/* SERVICES with Dropdown */}
-                    <div className="relative group">
-                        <Link
-                            href="/#impact"
-                            className="text-sm tracking-[0.25em] text-gray-400 light-theme:text-gray-600 hover:text-white light-theme:hover:text-black transition-all cursor-pointer"
-                        >
-                            SERVICES
-                        </Link>
-
-                        {/* Dropdown Menu */}
-                        <div className="absolute top-full right-0 mt-4 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-                            <div className="bg-[#0a0a0a] light-theme:bg-white border border-[#E0E0E0]/10 light-theme:border-black/10 rounded-lg overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)] light-theme:shadow-[0_0_30px_rgba(0,0,0,0.1)]">
-                                <Link
-                                    href="/#service-automation"
-                                    className="block px-6 py-4 text-sm text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all border-b border-[#E0E0E0]/5 light-theme:border-black/5"
-                                >
-                                    <div className="font-semibold mb-1">Workflow Automation</div>
-                                    <div className="text-xs text-gray-500">n8n, Zapier, Make</div>
-                                </Link>
-                                <Link
-                                    href="/#service-web"
-                                    className="block px-6 py-4 text-sm text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all border-b border-[#E0E0E0]/5 light-theme:border-black/5"
-                                >
-                                    <div className="font-semibold mb-1">Web Development</div>
-                                    <div className="text-xs text-gray-500">React, Node.js, Full Stack</div>
-                                </Link>
-                                <Link
-                                    href="/#service-ai"
-                                    className="block px-6 py-4 text-sm text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all"
-                                >
-                                    <div className="font-semibold mb-1">AI Integration</div>
-                                    <div className="text-xs text-gray-500">OpenAI, Claude, AI Workflows</div>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
+                    {/* SERVICES */}
+                    <Link
+                        href="/#impact"
+                        className="text-sm tracking-[0.25em] text-gray-400 light-theme:text-gray-600 hover:text-white light-theme:hover:text-black transition-all"
+                    >
+                        SERVICES
+                    </Link>
 
                     {/* INDUSTRIES with Dropdown */}
                     <div className="relative group">

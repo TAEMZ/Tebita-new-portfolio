@@ -73,7 +73,7 @@ export default function Footer({ initialContact }: { initialContact?: any }) {
           </button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 mb-16 pt-16 border-t border-[#E0E0E0]/10">
+        <div className="grid md:grid-cols-2 gap-12 mb-16 pt-16 border-t border-[#E0E0E0]/10">
           <div>
             <h3 className="text-2xl font-bold text-[#E0E0E0] mb-6">CONTACT</h3>
             <div className="space-y-3 font-mono text-sm">
@@ -93,44 +93,6 @@ export default function Footer({ initialContact }: { initialContact?: any }) {
                 {contact.location}
               </p>
             </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold text-[#E0E0E0] mb-6">SERVICES</h3>
-            <ul className="space-y-3 font-mono text-sm">
-              <li>
-                <a
-                  href="#impact"
-                  className="text-[#C0C0C0] hover:text-[#E0E0E0] transition-colors duration-300"
-                >
-                  Artificial Intelligence
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#impact"
-                  className="text-[#C0C0C0] hover:text-[#E0E0E0] transition-colors duration-300"
-                >
-                  Full Stack Development
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#impact"
-                  className="text-[#C0C0C0] hover:text-[#E0E0E0] transition-colors duration-300"
-                >
-                  Hyper-Automation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#impact"
-                  className="text-[#C0C0C0] hover:text-[#E0E0E0] transition-colors duration-300"
-                >
-                  Cloud Architecture
-                </a>
-              </li>
-            </ul>
           </div>
 
           <div>

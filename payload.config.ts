@@ -180,21 +180,37 @@ export default buildConfig({
                     name: 'label',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'e.g., System Uptime, Global Projects, Lines of Code',
+                        description: 'The metric name that will be displayed',
+                    },
                 },
                 {
                     name: 'value',
                     type: 'number',
                     required: true,
+                    admin: {
+                        placeholder: 'e.g., 99, 142, 850',
+                        description: 'The numeric value to display',
+                    },
                 },
                 {
                     name: 'suffix',
                     type: 'text',
+                    admin: {
+                        placeholder: 'e.g., %, K+, M+',
+                        description: 'Optional suffix to append to the value (leave empty if not needed)',
+                    },
                 },
                 {
                     name: 'order',
                     type: 'number',
                     required: true,
                     defaultValue: 0,
+                    admin: {
+                        placeholder: '0',
+                        description: 'Display order (0 = first, 1 = second, etc.)',
+                    },
                 },
             ],
         },
