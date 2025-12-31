@@ -159,7 +159,7 @@ export default buildConfig({
     },
     db: postgresAdapter({
         pool: {
-            connectionString: (process.env.DATABASE_URI || '').replace('sslmode=require', 'sslmode=no-verify'),
+            connectionString: process.env.DATABASE_URI || '',
             ssl: {
                 rejectUnauthorized: false,
             },
