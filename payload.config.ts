@@ -160,7 +160,7 @@ export default buildConfig({
     db: postgresAdapter({
         pool: {
             connectionString: process.env.DATABASE_URI || '',
-            ssl: process.env.NODE_ENV === 'production' || process.env.DATABASE_URI?.includes('supabase')
+            ssl: process.env.DATABASE_URI && !process.env.DATABASE_URI.includes('localhost')
                 ? { rejectUnauthorized: false }
                 : false,
         },
