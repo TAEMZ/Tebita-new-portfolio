@@ -87,7 +87,7 @@ export default function TechStack({ initialTechnology }: { initialTechnology?: a
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-4 min-h-[400px]">
-                    {categories.map((category) => (
+                    {categories.map((category: any) => (
                         <div
                             key={category.id}
                             onClick={() => setActiveCategory(category.id)}
@@ -117,7 +117,7 @@ export default function TechStack({ initialTechnology }: { initialTechnology?: a
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 overflow-y-auto pr-2 custom-scrollbar">
-                                    {category.items.map((item) => (
+                                    {category.items.map((item: any) => (
                                         <div
                                             key={item.name}
                                             className="group flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-[#111] light-theme:bg-gray-100 border border-[#E0E0E0]/5 light-theme:border-black/5 hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20 transition-all duration-300 hover:-translate-y-1"

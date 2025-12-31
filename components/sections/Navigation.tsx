@@ -18,27 +18,13 @@ export default function Navigation() {
   const menuItems = [
     { label: 'HOME', href: '/#hero' },
     { label: 'SERVICES', href: '/#impact' },
-    { label: 'INDUSTRIES', hasSubmenu: true },
     { label: 'TECHNOLOGY', href: '/#techstack' },
     { label: 'PROJECTS', href: '/#portfolio' },
     { label: 'ABOUT', href: '/#philosophy' },
     { label: 'CONTACT', href: '/#footer' },
   ];
 
-  const industries = [
-    { label: 'Retail & eCommerce', href: '/industries/retail-ecommerce' },
-    { label: 'Fintech', href: '/industries/fintech' },
-    { label: 'Transportation & Logistics', href: '/industries/transportation-logistics' },
-    { label: 'Enterprises', href: '/industries/enterprises' },
-    { label: 'EdTech', href: '/industries/edtech' },
-    { label: 'Healthcare', href: '/industries/healthcare' },
-    { label: 'Automotive', href: '/industries/automotive' },
-    { label: 'Startups', href: '/industries/startups' },
-    { label: 'Travel & Hospitality', href: '/industries/travel-hospitality' },
-    { label: 'Real Estate', href: '/industries/real-estate' },
-    { label: 'On Demand', href: '/industries/on-demand' },
-    { label: 'Government & Public Sector', href: '/industries/government-public-sector' },
-  ];
+  const industries: any[] = [];
 
   return (
     <>
@@ -71,7 +57,7 @@ export default function Navigation() {
           />
 
           <ul className="relative z-10 space-y-6 px-8 w-full max-w-md">
-            {menuItems.map((item, index) => (
+            {menuItems.map((item: any, index: number) => (
               <li
                 key={item.label}
                 className={`transition-all duration-500 ${isOpen
@@ -92,7 +78,7 @@ export default function Navigation() {
                     </button>
                     {showIndustries && (
                       <div className="mt-4 ml-6 space-y-3 max-h-64 overflow-y-auto">
-                        {industries.map((industry) => (
+                        {industries.map((industry: any) => (
                           <a
                             key={industry.href}
                             href={industry.href}
