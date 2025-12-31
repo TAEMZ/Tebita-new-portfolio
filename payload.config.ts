@@ -164,6 +164,7 @@ export default buildConfig({
                 rejectUnauthorized: false,
             },
         },
+        push: true,
     }),
     sharp,
 })
