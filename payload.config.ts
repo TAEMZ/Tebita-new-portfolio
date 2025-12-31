@@ -10,6 +10,10 @@ import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+if (process.env.NODE_ENV === 'production') {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+}
+
 export default buildConfig({
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
     admin: {
