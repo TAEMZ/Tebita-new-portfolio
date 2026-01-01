@@ -91,6 +91,57 @@ export default function Header() {
                         SERVICES
                     </Link>
 
+                    {/* INDUSTRIES with Dropdown */}
+                    <div className="relative group">
+                        <span className="text-sm tracking-[0.25em] text-gray-400 light-theme:text-gray-600 hover:text-white light-theme:hover:text-black transition-all cursor-pointer">
+                            INDUSTRIES
+                        </span>
+
+                        {/* Dropdown Menu - Grid Layout */}
+                        <div className="absolute top-full right-0 mt-4 w-[800px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                            <div className="bg-[#0a0a0a] light-theme:bg-white border border-[#E0E0E0]/10 light-theme:border-black/10 rounded-lg overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)] light-theme:shadow-[0_0_30px_rgba(0,0,0,0.1)] p-6">
+                                <div className="grid grid-cols-5 gap-3">
+                                    <Link href="/industries/retail-ecommerce" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Retail & eCommerce
+                                    </Link>
+                                    <Link href="/industries/fintech" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Fintech
+                                    </Link>
+                                    <Link href="/industries/transportation-logistics" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Transport & Logistics
+                                    </Link>
+                                    <Link href="/industries/enterprises" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Enterprises
+                                    </Link>
+                                    <Link href="/industries/edtech" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        EdTech
+                                    </Link>
+                                    <Link href="/industries/healthcare" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Healthcare
+                                    </Link>
+                                    <Link href="/industries/automotive" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Automotive
+                                    </Link>
+                                    <Link href="/industries/startups" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Startups
+                                    </Link>
+                                    <Link href="/industries/travel-hospitality" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Travel & Hospitality
+                                    </Link>
+                                    <Link href="/industries/real-estate" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Real Estate
+                                    </Link>
+                                    <Link href="/industries/on-demand" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        On Demand
+                                    </Link>
+                                    <Link href="/industries/government-public-sector" className="px-4 py-3 text-xs text-center text-gray-400 light-theme:text-gray-700 hover:text-white light-theme:hover:text-black hover:bg-[#E0E0E0]/5 light-theme:hover:bg-black/5 transition-all rounded border border-transparent hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20">
+                                        Gov & Public
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* TECHNOLOGY */}
                     <Link
                         href="/#techstack"

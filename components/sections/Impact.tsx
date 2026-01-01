@@ -56,7 +56,7 @@ export default function Impact({ initialServices }: { initialServices?: any[] })
         </div>
 
         <div className="space-y-1">
-          {services.map((service: any, index: number) => (
+          {services.map((service, index) => (
             <div
               key={service.number}
               id={index === 0 ? 'service-automation' : index === 1 ? 'service-web' : 'service-ai'}

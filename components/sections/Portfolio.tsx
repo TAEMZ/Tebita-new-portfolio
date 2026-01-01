@@ -78,7 +78,7 @@ export default function Portfolio({ initialProjects }: { initialProjects?: any[]
             msOverflowStyle: 'none',
           }}
         >
-          {projects.map((project: any, index: number) => (
+          {projects.map((project, index) => (
             <div
               key={project.title}
               className="flex-shrink-0 w-[85vw] md:w-[400px] group cursor-pointer"

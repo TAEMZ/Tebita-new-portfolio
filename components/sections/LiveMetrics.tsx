@@ -60,7 +60,7 @@ export default function LiveMetrics({ initialMetrics }: { initialMetrics?: any[]
         <section className="py-20 bg-[#050505] border-b border-[#333]/50">
             <div className="max-w-7xl mx-auto px-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    {metrics.map((metric: any, index: number) => (
+                    {metrics.map((metric, index) => (
                         <MetricCard
                             key={index}
                             label={metric.label}

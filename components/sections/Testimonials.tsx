@@ -100,7 +100,7 @@ export default function Testimonials({ initialTestimonials }: { initialTestimoni
                         </div>
 
                         <div className="flex flex-col gap-4 mt-auto">
-                            {testimonials.map((_: any, idx: number) => (
+                            {testimonials.map((_, idx) => (
                                 <button
                                     key={idx}
                                     onClick={() => {

@@ -62,7 +62,7 @@ export default function Philosophy({ initialPhilosophy }: { initialPhilosophy?: 
             </div>
 
             <div className="mt-12 font-mono text-sm leading-relaxed">
-              {codeLines.map((line: string, index: number) => (
+              {codeLines.map((line, index) => (
                 <div
                   key={index}
                   className="transition-all duration-300"
