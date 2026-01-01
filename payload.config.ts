@@ -251,7 +251,7 @@ export default buildConfig({
             ],
         },
         {
-            slug: 'tech-categories',
+            slug: 'techstack',
             admin: {
                 useAsTitle: 'title',
             },

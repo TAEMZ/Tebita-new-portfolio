@@ -34,7 +34,7 @@ export default async function Home() {
       payload.find({ collection: 'testimonials' }),
       payload.find({ collection: 'metrics', sort: 'order' }),
       payload.find({ collection: 'contact', limit: 1 }),
-      payload.find({ collection: 'tech-categories', sort: 'order' })
+      payload.find({ collection: 'techstack', sort: 'order' })
     ]);
 
     services = servicesData.docs;
