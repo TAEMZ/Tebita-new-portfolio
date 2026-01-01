@@ -55,29 +55,33 @@ export default function Footer({ initialContact, initialCTA }: { initialContact?
             Ready to transform your vision into reality? Let's create something extraordinary together.
           </p>
 
-          <a
-            href={`mailto:${cta.email}`}
+          <div
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
-            className="group relative inline-flex items-center justify-center px-16 py-6 text-xl font-bold text-[#050505] bg-[#C0C0C0] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(192,192,192,0.6)] hover:scale-105"
+            className="inline-block"
           >
-            <span className="relative z-10 flex items-center gap-3">
-              {cta.buttonLabel}
-              <svg
-                className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </span>
+            <a
+              href={`mailto:${cta.email}`}
+              className="group relative inline-flex items-center justify-center px-16 py-6 text-xl font-bold text-[#050505] bg-[#C0C0C0] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(192,192,192,0.6)] hover:scale-105"
+            >
+              <span className="relative z-10 flex items-center gap-3">
+                {cta.buttonLabel}
+                <svg
+                  className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-2"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </span>
 
-            <div className="absolute inset-0 bg-gradient-to-r from-[#E0E0E0] via-[#C0C0C0] to-[#E0E0E0] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </a>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#E0E0E0] via-[#C0C0C0] to-[#E0E0E0] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </a>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16 pt-16 border-t border-[#E0E0E0]/10">
