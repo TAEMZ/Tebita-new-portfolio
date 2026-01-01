@@ -191,15 +191,7 @@ export default function LoadingScreen() {
           </svg>
         </div>
 
-        <p className="font-mono text-sm text-[#C0C0C0] relative z-10 mb-2">{progress}%</p>
-
-        {/* Loading Status Text */}
-        <div className="font-mono text-xs text-[#C0C0C0]/40 uppercase tracking-widest relative z-10">
-          {progress < 30 && "Initializing..."}
-          {progress >= 30 && progress < 60 && "Loading Assets..."}
-          {progress >= 60 && progress < 90 && "Preparing Experience..."}
-          {progress >= 90 && "Almost Ready..."}
-        </div>
+        {/* Progress removed as per user request */}
       </div>
 
       <style jsx>{`

@@ -202,21 +202,62 @@ body::before {
   color: #555555 !important;
 }
 
+.light-theme .text-\[\#C0C0C0\]\/80,
 .light-theme .text-\[\#C0C0C0\]\/70,
 .light-theme .text-\[\#C0C0C0\]\/60,
-.light-theme .text-\[\#C0C0C0\]\/50 {
+.light-theme .text-\[\#C0C0C0\]\/50,
+.light-theme .text-\[\#C0C0C0\]\/40,
+.light-theme .text-\[\#C0C0C0\]\/30,
+.light-theme .text-\[\#C0C0C0\]\/20,
+.light-theme .text-\[\#E0E0E0\]\/80,
+.light-theme .text-\[\#E0E0E0\]\/70,
+.light-theme .text-\[\#E0E0E0\]\/60,
+.light-theme .text-\[\#E0E0E0\]\/50,
+.light-theme .text-\[\#E0E0E0\]\/40,
+.light-theme .text-\[\#E0E0E0\]\/30,
+.light-theme .text-\[\#E0E0E0\]\/20 {
   color: #444444 !important;
   /* Force readable gray */
   opacity: 1 !important;
   /* Remove opacity to ensure readability */
 }
 
+.light-theme .bg-\[\#E0E0E0\],
+.light-theme .bg-\[\#E0E0E0\]\/30,
+.light-theme .bg-\[\#C0C0C0\]\/20 {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+.light-theme .bg-\[\#E0E0E0\] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.light-theme .text-\[\#888\],
+.light-theme .text-mono.text-sm.text-\[\#C0C0C0\]\/40 {
+  color: #666666 !important;
+  opacity: 1 !important;
+}
+
+
 /* Borders */
 .light-theme .border-\[\#E0E0E0\]\/10,
 .light-theme .border-\[\#E0E0E0\]\/5,
 .light-theme .border-\[\#E0E0E0\]\/20,
-.light-theme .border-\[\#E0E0E0\]\/30 {
+.light-theme .border-\[\#E0E0E0\]\/30,
+.light-theme .border-\[\#333\],
+.light-theme .border-\[\#333\]\/50 {
   border-color: var(--border-color) !important;
+}
+
+/* Background Gradients Fix */
+.light-theme .bg-\[radial-gradient\(circle_at_50\%_50\%\,\#333_0\%\,transparent_50\%\)\] {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.05) 0%, transparent 50%) !important;
+}
+
+.light-theme .bg-\[radial-gradient\(circle_at_bottom\,\#111_0\%\,transparent_70\%\)\] {
+  background: radial-gradient(circle at bottom, rgba(0, 0, 0, 0.05) 0%, transparent 70%) !important;
 }
 
 /* Hover Effects - Black/White Only (No Green) */

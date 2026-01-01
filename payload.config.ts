@@ -24,6 +24,13 @@ export default buildConfig({
             token: process.env.BLOB_READ_WRITE_TOKEN,
         }),
     ],
+    onInit: async (payload) => {
+        if (!process.env.BLOB_READ_WRITE_TOKEN) {
+            payload.logger.warn('WARNING: BLOB_READ_WRITE_TOKEN is missing locally. Media will fallback to local disk storage (public/media).')
+        } else {
+            payload.logger.info('Vercel Blob Storage is enabled.')
+        }
+    },
     collections: [
         {
             slug: 'users',
