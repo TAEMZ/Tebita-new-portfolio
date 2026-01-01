@@ -48,6 +48,9 @@ export default buildConfig({
                     name: 'alt',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'Describe the image for accessibility',
+                    },
                 },
             ],
         },
@@ -61,16 +64,25 @@ export default buildConfig({
                     name: 'number',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: '01',
+                    },
                 },
                 {
                     name: 'title',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'e.g., UI/UX Design',
+                    },
                 },
                 {
                     name: 'description',
                     type: 'textarea',
                     required: true,
+                    admin: {
+                        placeholder: 'Describe the service in detail...',
+                    },
                 },
                 {
                     name: 'tags',
@@ -79,6 +91,9 @@ export default buildConfig({
                         {
                             name: 'tag',
                             type: 'text',
+                            admin: {
+                                placeholder: 'e.g., Figma',
+                            },
                         },
                     ],
                 },
@@ -99,18 +114,30 @@ export default buildConfig({
                     name: 'title',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'Project Name',
+                    },
                 },
                 {
                     name: 'client',
                     type: 'text',
+                    admin: {
+                        placeholder: 'Client Name',
+                    },
                 },
                 {
                     name: 'tech',
                     type: 'text',
+                    admin: {
+                        placeholder: 'e.g., Next.js, Tailwind',
+                    },
                 },
                 {
                     name: 'outcome',
                     type: 'text',
+                    admin: {
+                        placeholder: 'Main result or goal achieved',
+                    },
                 },
                 {
                     name: 'image',
@@ -129,6 +156,9 @@ export default buildConfig({
                     name: 'title',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'e.g., Strategy First',
+                    },
                 },
                 {
                     name: 'content',
@@ -137,6 +167,9 @@ export default buildConfig({
                         {
                             name: 'point',
                             type: 'text',
+                            admin: {
+                                placeholder: 'Detailed philosophy point...',
+                            },
                         },
                     ],
                 },
@@ -152,21 +185,33 @@ export default buildConfig({
                     name: 'quote',
                     type: 'textarea',
                     required: true,
+                    admin: {
+                        placeholder: 'Client testimonial quote...',
+                    },
                 },
                 {
                     name: 'author',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'Author Name',
+                    },
                 },
                 {
                     name: 'role',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'e.g., CEO',
+                    },
                 },
                 {
                     name: 'company',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'Company Name',
+                    },
                 },
             ],
         },
@@ -224,29 +269,47 @@ export default buildConfig({
                     name: 'email',
                     type: 'email',
                     required: true,
+                    admin: {
+                        placeholder: 'hello@example.com',
+                    },
                 },
                 {
                     name: 'phone',
                     type: 'text',
+                    admin: {
+                        placeholder: '+1 (234) 567-890',
+                    },
                 },
                 {
                     name: 'location',
                     type: 'textarea',
+                    admin: {
+                        placeholder: 'Address or City, Country',
+                    },
                 },
                 {
                     name: 'githubUrl',
                     type: 'text',
                     label: 'GitHub URL',
+                    admin: {
+                        placeholder: 'https://github.com/username',
+                    },
                 },
                 {
                     name: 'linkedinUrl',
                     type: 'text',
                     label: 'LinkedIn URL',
+                    admin: {
+                        placeholder: 'https://linkedin.com/in/username',
+                    },
                 },
                 {
                     name: 'twitterUrl',
                     type: 'text',
                     label: 'Twitter URL',
+                    admin: {
+                        placeholder: 'https://twitter.com/username',
+                    },
                 },
             ],
         },
@@ -260,17 +323,26 @@ export default buildConfig({
                     name: 'title',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'e.g., FRONTEND',
+                    },
                 },
                 {
                     name: 'description',
                     type: 'text',
                     required: true,
+                    admin: {
+                        placeholder: 'Short description of the category...',
+                    },
                 },
                 {
                     name: 'order',
                     type: 'number',
                     required: true,
                     defaultValue: 0,
+                    admin: {
+                        placeholder: '0',
+                    },
                 },
                 {
                     name: 'items',
@@ -281,6 +353,9 @@ export default buildConfig({
                             name: 'name',
                             type: 'text',
                             required: true,
+                            admin: {
+                                placeholder: 'e.g., React',
+                            },
                         },
                         {
                             name: 'icon',
@@ -288,6 +363,7 @@ export default buildConfig({
                             required: true,
                             admin: {
                                 description: 'Emoji or short icon text',
+                                placeholder: '⚛️',
                             },
                         },
                         {
@@ -295,8 +371,50 @@ export default buildConfig({
                             type: 'text',
                             required: true,
                             label: 'Description',
+                            admin: {
+                                placeholder: 'e.g., UI Library',
+                            },
                         },
                     ],
+                },
+            ],
+        },
+        {
+            slug: 'cta',
+            labels: {
+                singular: 'CTA (Let\'s Talk)',
+                plural: 'CTAs (Let\'s Talk)',
+            },
+            admin: {
+                useAsTitle: 'title',
+            },
+            fields: [
+                {
+                    name: 'title',
+                    type: 'text',
+                    required: true,
+                    defaultValue: 'LET\'S TALK',
+                    admin: {
+                        placeholder: 'LET\'S TALK',
+                    },
+                },
+                {
+                    name: 'buttonLabel',
+                    type: 'text',
+                    required: true,
+                    defaultValue: 'SEND AN EMAIL',
+                    admin: {
+                        placeholder: 'SEND AN EMAIL',
+                    },
+                },
+                {
+                    name: 'email',
+                    type: 'email',
+                    required: true,
+                    admin: {
+                        placeholder: 'your-gmail@gmail.com',
+                        description: 'The email address that the LET\'S TALK button will open in Gmail.',
+                    },
                 },
             ],
         },

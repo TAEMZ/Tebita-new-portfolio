@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Footer({ initialContact }: { initialContact?: any }) {
+export default function Footer({ initialContact, initialCTA }: { initialContact?: any, initialCTA?: any }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
@@ -13,6 +13,12 @@ export default function Footer({ initialContact }: { initialContact?: any }) {
     githubUrl: 'https://github.com',
     linkedinUrl: 'https://linkedin.com',
     twitterUrl: 'https://twitter.com'
+  };
+
+  const cta = initialCTA || {
+    title: "LET'S TALK",
+    buttonLabel: "SEND AN EMAIL",
+    email: contact.email
   };
 
   useEffect(() => {
@@ -42,20 +48,21 @@ export default function Footer({ initialContact }: { initialContact?: any }) {
 
       <div className="max-w-7xl mx-auto px-8 md:px-16 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold text-[#E0E0E0] mb-8 tracking-tight">
-            START THE RIPPLE<span className="liquid-text">.</span>
+          <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold text-[#E0E0E0] mb-8 tracking-tight uppercase">
+            {cta.title}<span className="liquid-text">.</span>
           </h2>
           <p className="text-xl text-[#C0C0C0] max-w-2xl mx-auto mb-16">
             Ready to transform your vision into reality? Let's create something extraordinary together.
           </p>
 
-          <button
+          <a
+            href={`mailto:${cta.email}`}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             className="group relative inline-flex items-center justify-center px-16 py-6 text-xl font-bold text-[#050505] bg-[#C0C0C0] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(192,192,192,0.6)] hover:scale-105"
           >
             <span className="relative z-10 flex items-center gap-3">
-              LET'S TALK
+              {cta.buttonLabel}
               <svg
                 className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-2"
                 fill="none"
@@ -70,7 +77,7 @@ export default function Footer({ initialContact }: { initialContact?: any }) {
             </span>
 
             <div className="absolute inset-0 bg-gradient-to-r from-[#E0E0E0] via-[#C0C0C0] to-[#E0E0E0] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </button>
+          </a>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16 pt-16 border-t border-[#E0E0E0]/10">
