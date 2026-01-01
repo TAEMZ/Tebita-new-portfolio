@@ -2,10 +2,8 @@
 
 import { useState } from 'react';
 
-export default function TechStack() {
-    const [activeCategory, setActiveCategory] = useState<string | null>('Automation');
-
-    const categories = [
+export default function TechStack({ initialTechCategories }: { initialTechCategories?: any[] }) {
+    const fallbackCategories = [
         {
             id: 'Automation',
             title: 'AUTOMATION',
@@ -56,6 +54,17 @@ export default function TechStack() {
         }
     ];
 
+    const categories = initialTechCategories && initialTechCategories.length > 0
+        ? initialTechCategories.map(cat => ({
+            id: cat.id || cat.title,
+            title: cat.title,
+            description: cat.description,
+            items: cat.items || []
+        }))
+        : fallbackCategories;
+
+    const [activeCategory, setActiveCategory] = useState<string | null>(categories[0]?.id || null);
+
     return (
         <section id="techstack" className="relative py-32 bg-[#050505] overflow-hidden">
             <div className="max-w-7xl mx-auto px-8 md:px-16">
@@ -99,7 +108,7 @@ export default function TechStack() {
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 overflow-y-auto pr-2 custom-scrollbar">
-                                    {category.items.map((item) => (
+                                    {category.items.map((item: any) => (
                                         <div
                                             key={item.name}
                                             className="group flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-[#111] light-theme:bg-gray-100 border border-[#E0E0E0]/5 light-theme:border-black/5 hover:border-[#E0E0E0]/20 light-theme:hover:border-black/20 transition-all duration-300 hover:-translate-y-1"

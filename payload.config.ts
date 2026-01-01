@@ -250,6 +250,56 @@ export default buildConfig({
                 },
             ],
         },
+        {
+            slug: 'tech-categories',
+            admin: {
+                useAsTitle: 'title',
+            },
+            fields: [
+                {
+                    name: 'title',
+                    type: 'text',
+                    required: true,
+                },
+                {
+                    name: 'description',
+                    type: 'text',
+                    required: true,
+                },
+                {
+                    name: 'order',
+                    type: 'number',
+                    required: true,
+                    defaultValue: 0,
+                },
+                {
+                    name: 'items',
+                    type: 'array',
+                    required: true,
+                    fields: [
+                        {
+                            name: 'name',
+                            type: 'text',
+                            required: true,
+                        },
+                        {
+                            name: 'icon',
+                            type: 'text',
+                            required: true,
+                            admin: {
+                                description: 'Emoji or short icon text',
+                            },
+                        },
+                        {
+                            name: 'desc',
+                            type: 'text',
+                            required: true,
+                            label: 'Description',
+                        },
+                    ],
+                },
+            ],
+        },
     ],
     editor: lexicalEditor({}),
     secret: process.env.PAYLOAD_SECRET || 'fallback-secret',
